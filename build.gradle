@@ -55,6 +55,12 @@ allure {
 tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events("started","standard_out")
+        }
+    }
 }
 
 task hello_test(type: Test) {
